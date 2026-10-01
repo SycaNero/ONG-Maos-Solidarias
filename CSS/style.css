@@ -1,0 +1,414 @@
+:root {
+  --dark: #1a4c45;
+  --mint: #a7d9b8;
+  --green: #46733f;
+  --lime: #ccd96c;
+  --cream: #f2eeeb;
+  --ink: #1c2b28;
+  --radius: 16px;
+  --shadow: 0 6px 20px rgba(26, 76, 69, .15);
+  --ease: .25s ease;
+  --check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2346733f' class='bi bi-check-circle-fill' viewBox='0 0 16 16'%3E  %3Cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3E%3C/svg%3E")
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+
+main {
+  flex: 1
+}
+
+img,
+svg {
+  max-width: 100%
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px
+}
+
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  fill: currentColor;
+  flex: none;
+  vertical-align: -.2em
+}
+
+/* Cabeçalho */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--dark);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .2)
+}
+
+#menu .horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem 1.5rem;
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+  min-height: 64px
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 800;
+  color: var(--cream);
+  font-size: 1.15rem
+}
+
+.logo .icon {
+  color: var(--lime);
+  width: 1.5em;
+  height: 1.5em
+}
+
+#menu ul {
+  display: flex;
+  gap: .25rem;
+  list-style: none
+}
+
+#menu ul a {
+  display: block;
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  color: var(--cream);
+  font-weight: 600;
+  transition: background var(--ease), color var(--ease)
+}
+
+#menu ul a:hover {
+  background: rgba(204, 217, 108, .2)
+}
+
+#menu ul a[aria-current="page"] {
+  background: var(--lime);
+  color: var(--dark)
+}
+
+/* Tipografia e layout */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: var(--dark)
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem)
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  text-align: center
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--lime);
+  margin: .6rem auto 0
+}
+
+p {
+  max-width: 68ch;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center
+}
+
+main>section {
+  padding: 3.5rem 0
+}
+
+main>section:nth-of-type(even) {
+  background: var(--mint)
+}
+
+.centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 0 1rem
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+}
+
+.banner {
+  width: 100%;
+  border-radius: var(--radius)
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  width: 100%
+}
+
+.quem-somos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: min(100%, 820px);
+  padding: 2rem;
+  background: var(--white, #fff);
+  border-radius: var(--radius);
+  border-left: 6px solid var(--green);
+  box-shadow: var(--shadow)
+}
+
+.quem-somos h2 {
+  text-align: left
+}
+
+.column,
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  width: min(100%, 1000px)
+}
+
+.column {
+  grid-template-columns: repeat(3, 1fr)
+}
+
+.grid {
+  grid-template-columns: repeat(2, 1fr)
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+  text-align: center;
+  padding: 1.75rem 1.25rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--ease)
+}
+
+.card:hover {
+  transform: translateY(-6px)
+}
+
+.svg-card {
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background: var(--mint);
+  fill: var(--dark)
+}
+
+.grid .card h3 {
+  font-size: 2.3rem;
+  color: var(--green)
+}
+
+/* Botões e formulário */
+.btn,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .8rem 1.6rem;
+  border: 2px solid var(--lime);
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--dark);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), transform var(--ease)
+}
+
+.btn:hover,
+button:hover {
+  background: var(--dark);
+  color: var(--lime);
+  transform: translateY(-2px)
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--cream)
+}
+
+.btn--outline:hover {
+  background: var(--cream);
+  color: var(--dark)
+}
+
+form {
+  width: min(100%, 680px)
+}
+
+fieldset {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--mint);
+  border-radius: var(--radius)
+}
+
+form>fieldset {
+  background: #fff;
+  box-shadow: var(--shadow);
+  border: 0
+}
+
+legend {
+  font-weight: 700;
+  color: var(--dark);
+  padding: 0 .5rem
+}
+
+label {
+  display: block;
+  margin-top: .9rem;
+  font-weight: 600;
+  font-size: .95rem
+}
+
+input:not([type="checkbox"]) {
+  width: 100%;
+  padding: .7rem .9rem;
+  margin-top: .3rem;
+  border: 2px solid var(--mint);
+  border-radius: 10px;
+  font: inherit;
+  background: var(--cream);
+  transition: border-color var(--ease)
+}
+
+input:not([type="checkbox"]):focus {
+  outline: 0;
+  border-color: var(--green)
+}
+
+input:user-invalid {
+  border-color: #c0392b
+}
+
+input[type="checkbox"] {
+  accent-color: var(--green);
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: -.2rem
+}
+
+input[type="checkbox"]+label {
+  display: inline;
+  margin-left: .5rem;
+  font-weight: 400
+}
+
+fieldset ul {
+  list-style: none;
+  display: grid;
+  gap: .4rem
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  background: var(--mint);
+  color: var(--dark);
+  font-weight: 600
+}
+
+/* Rodapé */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: var(--dark)
+}
+
+footer p {
+  color: var(--cream)
+}
+
+footer .icon {
+  color: var(--lime)
+}
+
+@media (max-width:768px) {
+
+  .column,
+  .grid {
+    grid-template-columns: 1fr
+  }
+
+  .quem-somos {
+    padding: 1.25rem
+  }
+}
+
+@media (max-width:520px) {
+  .logo span {
+    display: none
+  }
+
+  #menu .horizontal {
+    justify-content: center
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important
+  }
+}

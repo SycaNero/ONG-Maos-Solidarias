@@ -1,0 +1,42 @@
+main>section h1 {
+    text-align: center
+}
+
+main>section .centralizado>h2 {
+    margin-top: .5rem
+}
+
+article {
+    gap: .9rem;
+    width: min(100%, 760px);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow)
+}
+
+article h3 {
+    font-size: 1.6rem;
+    color: var(--green)
+}
+
+article img.banner {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: var(--mint);
+    color: var(--dark)
+}
+
+article ul {
+    list-style: none;
+    display: grid;
+    gap: .45rem;
+    width: fit-content;
+    margin: 0 auto
+}
+
+article li {
+    padding-left: 2rem;
+    background: var(--check) no-repeat left .25rem/1.1rem
+}

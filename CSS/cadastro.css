@@ -1,0 +1,21 @@
+main>.centralizado {
+    padding-block: 3rem
+}
+
+.banner--cadastro {
+    display: grid;
+    place-items: center;
+    width: min(100%, 680px);
+    height: 170px;
+    background: linear-gradient(135deg, var(--dark), var(--green));
+    color: var(--lime)
+}
+
+.banner--cadastro .icon {
+    width: 5rem;
+    height: 5rem
+}
+
+h2 {
+    margin-top: 1rem
+}
